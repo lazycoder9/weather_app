@@ -57,7 +57,7 @@ class WeatherController extends Controller
             $avg_week_diff = array_reduce($weekly_data, function($acc, $daily_data) {
               $acc += $daily_data['DAY_TEMP'] - $daily_data['NIGHT_TEMP'];
               return $acc;
-            }, 0) / count($weekly_data);
+              }, 0) / count($weekly_data);
             foreach ($weekly_data as $day => $daily_data) {
               $temp_diff = $daily_data['DAY_TEMP'] - $daily_data['NIGHT_TEMP'];
               if ($temp_diff > $avg_week_diff) {
