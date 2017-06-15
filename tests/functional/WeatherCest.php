@@ -20,8 +20,8 @@ class WeatherCest
 
     public function WeatherPageWithParams(\FunctionalTester $I)
     {
-        $month = 1;
-        $month_name = date('F', mktime(0, 0, 0, $month, 10));
+        $month = date('m', time());
+        $month_name = date('F', time());
         $year = 2017;
         $days_in_month = cal_days_in_month(CAL_GREGORIAN,$month,$year);
         $start_date = date('Y-m-d', mktime(0, 0, 0, $month, 1, $year));
