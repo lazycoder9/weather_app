@@ -23,10 +23,10 @@ class m170615_175016_init_base_data extends Migration
         $format = 'json';
         $client = new Client();
         $stop = false;
-        for($month = $start_month; $month < $end_month; $month++) {
+        for($month = $start_month; $month <= $end_month; $month++) {
           $days_in_month = cal_days_in_month(CAL_GREGORIAN,$month,$year);
           $start_date = mktime(0, 0, 0, $month, 1, $year);
-          $end_date = mktime(0, 0, 0, $month, $days_in_month, $year);
+          $end_date = $month == $end_month ? time() : mktime(0, 0, 0, $month, $days_in_month, $year);
           echo date('Y-m-d', $start_date) . " - " . date('Y-m-d', $end_date);
           $data = $client->createRequest()
                 ->setMethod('post')
