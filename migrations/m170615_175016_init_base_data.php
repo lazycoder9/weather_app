@@ -14,7 +14,7 @@ class m170615_175016_init_base_data extends Migration
           'name' => $city
         ]);
 
-        echo "Initializing weather data from 2016 to nowadays";
+        echo "Initializing weather data from 2 month ago to nowadays\n";
         $city_id = City::find()->select('id')->where(['name' => $city]);
         $start_month = date('m', strtotime('-2 month'));
         $end_month = date('m', time());
