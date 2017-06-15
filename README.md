@@ -17,3 +17,9 @@ Start the server
 php yii serve
 ```
 and go to localhost:8080 at browser
+
+### Project's current state
+```
+- There are weather data only for Tashkent from 1st of May to nowadays
+- Request weather data for other cities does not work
+```
