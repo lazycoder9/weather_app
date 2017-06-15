@@ -47,6 +47,7 @@ $config = [
         ],
     ],
     'params' => $params,
+    'defaultRoute' => 'weather',
 ];
 
 if (YII_ENV_DEV) {
